@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.authors       = ["Deans Charbal"]
   s.summary       = %q{A gem for accessing current MLB rosters using Wikipedia template pages.}
   s.description   = s.summary
+  s.homepage      = "https://github.com/deansc/wp_roster"
   s.license       = "MIT"
 
   s.files         = `git ls-files -z`.split("\x0")
