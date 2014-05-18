@@ -8,6 +8,7 @@ module WpRoster
       subject { roster }
 
       its(:players) { should have_at_least(40).item }
+      
 
     end
   end

@@ -12,6 +12,8 @@ module WpRoster
     its(:position)  { should eq "Infielder" }
     its(:active)    { should eq "Active" }
 
+    its(:to_s)      { should eq "David Wright                             | 5    | Infielder      | Active" }
+
   end
 
 end

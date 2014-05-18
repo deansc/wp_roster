@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    wp_roster (0.0.1)
+    wp_roster (0.1.0)
       httparty (~> 0.13.1)
       nokogiri (~> 1.6.1)
 

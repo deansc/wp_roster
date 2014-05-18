@@ -10,6 +10,10 @@ module WpRoster
       @active     = fields[3]
     end
 
+    def to_s
+      [@name.ljust(40), @number.ljust(4), @position.ljust(14), @active].join(" | ")
+    end
+
   end
 
   class Roster

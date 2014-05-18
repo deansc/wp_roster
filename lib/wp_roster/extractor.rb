@@ -42,7 +42,7 @@ module WpRoster
         node.text.split("\n").each do |string|
           string.strip!
           position = string if (string =~ /^(ca|pi|in|ou|ma|co|60-)/i)
-          players.push([$2, $1, position])  if /^([0-9]+) +([A-Z]+.*)/.match(string)            
+          players.push([$2, $1, position])  if /^(.*[0-9\-]+) +([A-Z]+.*)/.match(string)
         end
         players
       end
