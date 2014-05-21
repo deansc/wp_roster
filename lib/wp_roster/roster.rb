@@ -17,6 +17,8 @@ module WpRoster
   end
 
   class Roster
+    include Enumerable
+
     attr_accessor :players
 
     class << self
@@ -30,10 +32,12 @@ module WpRoster
       @players  = players
     end
 
+    def each &block
+      @players.each { |player| block.call(player) }
+    end
 
-    def order field, sort
-      @players.sort! { |a,b| a.send(field) <=> b.send(field) }
-      sort == :asc ? @players : @players.reverse!
+    def order field, sort      
+      sort == :asc ? self.sort { |a,b| a.send(field) <=> b.send(field) } : self.sort { |a,b| b.send(field) <=> a.send(field) }
     end
 
   end
