@@ -21,26 +21,27 @@ require 'wp_roster'
 roster = WpRoster::Roster.get('new york mets')
 
 # Get more details
-roster.size            # => 51
+roster.players.size            # => 51
 
 roster.players.first           
 # => #<WpRoster::Player:0x007fe7d42fe2c0 @name="Bartolo Colón", @number="40", @position="Pitchers", @active="Active">
 
-roster.first.name      # => "Bartolo Colón"
-roster.first.number    # => "40"
-roster.first.position  # => "Catchers"
-roster.first.active    # => "Active roster"
+roster.players.first.name      # => "Bartolo Colón"
+roster.players.first.number    # => "40"
+roster.players.first.position  # => "Catchers"
+roster.players.first.active    # => "Active roster"
 
-puts roster[2]
+puts roster.players[2]
 # =>  Rafael Montero                           | 50   | Pitchers       | Active
 
-puts roster
+puts roster.players
 # =>  Bartolo Colón                            | 40   | Pitchers       | Active
 #     Jacob deGrom                             | 48   | Pitchers       | Active
 #     Rafael Montero                           | 50   | Pitchers       | Active
 #     ...
 
-puts roster.order(:name, :desc)
+roster.order(:name, :desc)
+puts roster.players
 # =>  Zack Wheeler                             | 45   | Pitchers       | Active
 #     Zach Lutz                                | 19   | Infielders     | Inactive
 #     Wilfredo Tovar                           | 70   | Infielders     | Inactive
